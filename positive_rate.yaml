@@ -1,0 +1,27 @@
+metric_query_name: positive_rate
+date_column: week_start
+# TODO finish filling this out https://app.asana.com/0/0/1200726533775276/f
+metric_owner: ???
+metric_query_description: Note, for this metric, weekly snapshots are used. Mondays must be used as snapshot dates.
+metrics:
+  - name: positive_rate
+    description: Positive rate metric
+    model: (conversion_arr+expansion_arr)/(arr_at_week_start)
+pivot_columns:
+  - name: region
+    description: Region
+  - name: country
+    description: Country
+  - name: seat_bucket
+    description: Seat bucket
+features:
+  - name: arr_at_week_start
+    description: ARR at week start
+  - name: expansion_arr
+    description: Expansion ARR
+  - name: churn_arr
+    description: Churn ARR
+  - name: downgrade_arr
+    description: Downgrade ARR
+  - name: conversion_arr
+    description: Conversion ARR
